@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ApiService} from "../api.service";
+import {ActivatedRoute} from "@angular/router";
 
 
 @Component({
@@ -9,14 +10,24 @@ import {ApiService} from "../api.service";
 })
 export class DailyComponent implements OnInit {
 
-  cotd: any = undefined;
+  totds: any = undefined;
+  offset!: number;
 
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.api.getDailyResult().subscribe((data: any)=>{
+
+    this.route.queryParams.subscribe(params => {
+      this.offset = params['offset'];
+      if (isNaN(this.offset)) {
+        this.offset = 0;
+      }
+    });
+
+    this.api.getTrackOfTheDay(this.offset).subscribe((data: any)=>{
       console.log(data);
-      this.cotd = data;
+      this.totds = data;
+      this.totds.days.reverse();
     });
   }
 

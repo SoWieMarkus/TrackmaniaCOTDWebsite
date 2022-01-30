@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import json from "../../assets/globe.json";
+import json from "../../../assets/globe.json";
 import {BufferAttribute} from "three";
 
 function drawThreeGeo(radius, materalOptions, container) {

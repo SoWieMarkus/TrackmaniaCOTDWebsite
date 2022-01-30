@@ -6,14 +6,18 @@ import {AppComponent} from './app.component';
 import {DailyComponent} from './daily/daily.component';
 import {MonthlyComponent} from './monthly/monthly.component';
 import {GlobalComponent} from './global/global.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatCardModule} from "@angular/material/card";
-import { GlobeComponent } from './globe/globe.component';
+import {GlobeComponent} from './countries/globe/globe.component';
 import {HttpClientModule} from "@angular/common/http";
+import {CountriesComponent} from './countries/countries.component';
+import { MapComponent } from './map/map.component';
+import { DailyTotdComponent } from './daily/daily-totd/daily-totd.component';
+import { LeaderboardPlayerComponent } from './leaderboard-player/leaderboard-player.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,11 @@ import {HttpClientModule} from "@angular/common/http";
     DailyComponent,
     MonthlyComponent,
     GlobalComponent,
-    GlobeComponent
+    GlobeComponent,
+    CountriesComponent,
+    MapComponent,
+    DailyTotdComponent,
+    LeaderboardPlayerComponent
   ],
   imports: [
     BrowserModule,

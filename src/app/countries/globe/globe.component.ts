@@ -3,7 +3,7 @@ import * as THREE from "three";
 import { OrbitControls} from "three/examples/jsm/controls/OrbitControls";
 import * as Globe from "./globe";
 
-import {GlobalComponent} from "../global/global.component";
+import {GlobalComponent} from "../../global/global.component";
 
 @Component({
   selector: 'app-globe',
@@ -54,7 +54,7 @@ export class GlobeComponent implements OnInit, AfterViewInit {
     let component: GlobeComponent = this;
     (function render() {
       requestAnimationFrame(render);
-      component.planet.rotation.y += 0.001;
+      component.planet.rotation.y -= 0.001;
       component.renderer.render(component.scene, component.camera);
     }());
   }
@@ -67,7 +67,7 @@ export class GlobeComponent implements OnInit, AfterViewInit {
   private static getPlanet(): THREE.Object3D {
     let planet = new THREE.Object3D();
     let geometry = new THREE.SphereGeometry(10,32,32);
-    let material = new THREE.MeshBasicMaterial({color:0x0000ff, wireframe: true});
+    let material = new THREE.MeshBasicMaterial({color:0x0000ff});
     let sphere = new THREE.Mesh(geometry, material);
     planet.add(sphere);
     return planet;

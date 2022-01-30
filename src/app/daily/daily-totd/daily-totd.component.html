@@ -1,0 +1,8 @@
+<span>{{totd}}</span>
+<mat-card>
+  <mat-card-header>
+    <img src="{{totd.map.thumbnailUrl}}" alt="thumbnail of map" class="totd-thumbnail">
+    <div #name> {{totd.map.name}}</div>
+    {{totd.monthday}} . {{month}} . {{year}}
+  </mat-card-header>
+</mat-card>
