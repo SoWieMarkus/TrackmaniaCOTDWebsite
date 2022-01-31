@@ -5,10 +5,6 @@ import {BufferAttribute} from "three";
 function drawThreeGeo(radius, materalOptions, container) {
   container = container || window.scene;
 
-  /*var x_values = [];
-  var y_values = [];
-  var z_values = [];*/
-
   let xyz_values = [];
 
   var countries = createGeometryArray();
@@ -26,21 +22,6 @@ function drawThreeGeo(radius, materalOptions, container) {
       drawLine(materalOptions);
     }
   }
-
-  /*for (var geom_num = 0; geom_num < json_geom.length; geom_num++) {
-
-    for (var segment_num = 0; segment_num < json_geom[geom_num].coordinates.length; segment_num++) {
-
-
-      for (var point_num = 0; point_num < coordinate_array.length; point_num++) {
-        convertToSphereCoords(coordinate_array[point_num], radius);
-      }
-
-      console.log(xyz_values);
-      drawLine(materalOptions);
-
-    }
-  }*/
 
   function createGeometryArray() {
     let geometry_array = [];

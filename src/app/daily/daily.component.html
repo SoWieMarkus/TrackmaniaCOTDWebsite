@@ -1,7 +1,8 @@
 <div style="padding: 13px;">
 
-  <button mat-button routerLink="/daily?offset={{this.offset - 1}}">Next</button>
-  <button mat-button routerLink="/daily?offset={{this.offset + 1}}">Last</button>
+
+  <button mat-button [routerLink]="['/daily', offset + 1]">Last</button>
+  <button mat-button [routerLink]="['/daily', offset - 1]">Next</button>
 
   <mat-spinner *ngIf="totds === undefined"></mat-spinner>
 

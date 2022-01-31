@@ -1,1 +1,15 @@
-<p>monthly works!</p>
+
+
+<div style="margin-left: 10%; margin-right: 10%; width: 80%; text-align: center"><h1>Monthly Leaderboard</h1></div>
+
+
+<div style="margin-left: 10%; margin-right: 10%; width: 80%; text-align: center">
+  <button style="margin: 3px" disabled="{{disabledPrevious()}}" #previous mat-button
+          [routerLink]="['/monthly', getNextYear(-1), getNextMonth(-1)]">{{previousMonthName()}}</button>
+  <span>{{currentMonthName()}}</span>
+  <button style="margin: 3px" disabled="{{disabledNext()}}" #next mat-button
+          [routerLink]="['/monthly', getNextYear(+1), getNextMonth(+1)]">{{nextMonthName()}}</button>
+</div>
+
+
+<app-leaderboard [leaderboard]="leaderboard"></app-leaderboard>

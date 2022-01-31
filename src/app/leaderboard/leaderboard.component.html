@@ -1,0 +1,42 @@
+<div style="padding: 13px;" class="main">
+
+  <mat-spinner style="margin-left: 45%; margin-right: 45%; width: 10%; margin-top: 10%" *ngIf="leaderboard === undefined ||leaderboard === null"></mat-spinner>
+
+  <table *ngIf="leaderboard !== undefined && leaderboard !== null" class="table">
+
+    <thead>
+    <tr>
+      <td>Position</td>
+      <td>Nation</td>
+      <td style="text-align: left">Name</td>
+      <td>Punkte</td>
+      <td><img class="icon" src="../../assets/first.png" alt="first"></td>
+      <td><img class="icon" src="../../assets/second.png" alt="second"></td>
+      <td><img class="icon" src="../../assets/third.png" alt="third"></td>
+      <td>Best</td>
+      <td>Average</td>
+    </tr>
+    </thead>
+
+    <tr *ngFor="let player of leaderboard.leaderBoardPlayers">
+      <td>{{player.position}}.</td>
+      <td>
+        <app-flag [zone]="player.zone"></app-flag>
+      </td>
+      <td style="text-align: left">
+        <a href="https://trackmania.io/#/player/{{player.accountId}}">{{player.displayName}}</a></td>
+      <td>{{player.points}}</td>
+      <td>
+        <div *ngIf="player.amountFirst !== 0">{{player.amountFirst}}</div>
+      </td>
+      <td>
+        <div *ngIf="player.amountSecond !== 0">{{player.amountSecond}}</div>
+      </td>
+      <td>
+        <div *ngIf="player.amountThird !== 0">{{player.amountThird}}</div>
+      </td>
+      <td>{{player.bestResult}}</td>
+      <td>{{player.averagePosition}}</td>
+    </tr>
+  </table>
+</div>

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {ApiService} from "../api.service";
+import {ApiService} from "../api/api.service";
+import {Leaderboard} from "../api/models/Leaderboard";
 
 @Component({
   selector: 'app-global',
@@ -8,14 +9,13 @@ import {ApiService} from "../api.service";
 })
 export class GlobalComponent implements OnInit {
 
-  private leaderboard!: Object;
+  leaderboard!: Leaderboard;
 
   constructor(private api: ApiService) {
   }
 
   ngOnInit(): void {
-    this.api.getGlobalLeaderboard().subscribe((data: any) => {
-      console.log(data);
+    this.api.getGlobalLeaderboard().subscribe((data: Leaderboard) => {
       this.leaderboard = data;
     });
   }

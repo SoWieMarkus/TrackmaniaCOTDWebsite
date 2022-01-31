@@ -15,9 +15,11 @@ import {MatCardModule} from "@angular/material/card";
 import {GlobeComponent} from './countries/globe/globe.component';
 import {HttpClientModule} from "@angular/common/http";
 import {CountriesComponent} from './countries/countries.component';
-import { MapComponent } from './map/map.component';
-import { DailyTotdComponent } from './daily/daily-totd/daily-totd.component';
-import { LeaderboardPlayerComponent } from './leaderboard-player/leaderboard-player.component';
+import {MapComponent} from './map/map.component';
+import {DailyTotdComponent} from './daily/daily-totd/daily-totd.component';
+import {MatTabsModule} from "@angular/material/tabs";
+import {FlagComponent} from './flag/flag.component';
+import {LeaderboardComponent} from './leaderboard/leaderboard.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { LeaderboardPlayerComponent } from './leaderboard-player/leaderboard-pla
     CountriesComponent,
     MapComponent,
     DailyTotdComponent,
-    LeaderboardPlayerComponent
+    FlagComponent,
+    LeaderboardComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,8 @@ import { LeaderboardPlayerComponent } from './leaderboard-player/leaderboard-pla
     MatIconModule,
     MatButtonModule,
     MatCardModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

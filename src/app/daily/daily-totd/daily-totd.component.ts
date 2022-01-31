@@ -1,5 +1,4 @@
 import {AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
-import {Element} from "@angular/compiler";
 
 @Component({
   selector: 'app-daily-totd',

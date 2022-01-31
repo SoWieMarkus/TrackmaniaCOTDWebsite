@@ -8,9 +8,9 @@ import {CountriesComponent} from "./countries/countries.component";
 
 const routes: Routes = [
 
-  {path: '', redirectTo: 'daily', pathMatch: 'full'},
-  {path: 'daily', component: DailyComponent},
-  {path: 'monthly', component: MonthlyComponent},
+  {path: '', redirectTo: 'global', pathMatch: 'full'},
+  {path: 'daily/:offset', component: DailyComponent},
+  {path: 'monthly/:year/:month', component: MonthlyComponent},
   {path: 'global', component: GlobalComponent},
   {path: 'globe', component: CountriesComponent}
 
