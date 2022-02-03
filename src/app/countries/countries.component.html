@@ -1,9 +1,11 @@
-<app-map #map></app-map>
-<table>
+<div style="width: 100%">
+<app-map #map style="width: 40%; float: right"></app-map>
+<table style="width: 60%; float: left">
   <tr *ngFor="let country of countries">
     <td (click)="clickEvent(country)">{{country.name}}</td>
   </tr>
 </table>
+</div>
 
 
 

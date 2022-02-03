@@ -5,8 +5,8 @@ import * as topojson from "topojson";
 
 const SVG_ID = "map_svg";
 
-const width = 700;
-const height = 700;
+const width = 500;
+const height = 500;
 
 const colors = {
   trackmaniaZone: "grey",
@@ -25,7 +25,6 @@ let projection = d3.geoOrthographic()
 
 
 function focus(id) {
-  console.log(id);
   let country = map.select(".clickable[data-country-id='"+id+"']");
   d3.selectAll(".clicked")
     .classed("clicked", false)
@@ -50,13 +49,9 @@ let path = d3.geoPath().projection(projection);
 
 function drawGlobe() {
 
-
-
-
-
   map = d3.select("#map").append("svg")
-    .attr("width", "100%")
-    .attr("height", "600px")
+    .attr("width", width)
+    .attr("height", height)
     .attr("id", SVG_ID)
     .on("mousedown", mousedown)
     .on("mousemove", mousemove)
@@ -140,7 +135,6 @@ function drawGlobe() {
   function mouseup() {
     m0 = null;
   }
-
 
   map.append("use")
     .attr("class", "stroke")
