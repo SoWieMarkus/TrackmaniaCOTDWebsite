@@ -1,5 +1,6 @@
 import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
-import {drawMap} from "./map"
+import {drawMap, drawGlobe, focus} from "./map"
+import {Country} from "../country/Country";
 
 @Component({
   selector: 'app-map',
@@ -21,8 +22,12 @@ export class MapComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
 
-    drawMap(this.backgroundColor);
+    drawGlobe();
 
+  }
+
+  public focus(country: Country) {
+    focus(country.geoId);
   }
 
 

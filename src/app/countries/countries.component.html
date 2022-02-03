@@ -1,2 +1,12 @@
-<app-globe></app-globe>
-<app-map></app-map>
+<app-map #map></app-map>
+<table>
+  <tr *ngFor="let country of countries">
+    <td (click)="clickEvent(country)">{{country.name}}</td>
+  </tr>
+</table>
+
+
+
+
+
+

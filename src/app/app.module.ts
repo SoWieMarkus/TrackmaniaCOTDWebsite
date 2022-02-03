@@ -20,6 +20,7 @@ import {DailyTotdComponent} from './daily/daily-totd/daily-totd.component';
 import {MatTabsModule} from "@angular/material/tabs";
 import {FlagComponent} from './flag/flag.component';
 import {LeaderboardComponent} from './leaderboard/leaderboard.component';
+import { CountryComponent } from './country/country.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {LeaderboardComponent} from './leaderboard/leaderboard.component';
     MapComponent,
     DailyTotdComponent,
     FlagComponent,
-    LeaderboardComponent
+    LeaderboardComponent,
+    CountryComponent
   ],
   imports: [
     BrowserModule,
