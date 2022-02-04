@@ -1,5 +1,9 @@
 # TrackmaniaCOTDWebsite
 
+## Current version
+
+<a href="http://cotd-leaderboard.com:1337">Trackmania COTD Leaderboard</a>
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.0.
 
 ## Development server
