@@ -7,7 +7,7 @@
     <thead>
     <tr>
       <td>Position</td>
-      <td>Nation</td>
+      <td *ngIf="showNation">Nation</td>
       <td style="text-align: left">Name</td>
       <td>Punkte</td>
       <td><img class="icon" src="../../assets/first.png" alt="first"></td>
@@ -18,9 +18,9 @@
     </tr>
     </thead>
 
-    <tr *ngFor="let player of leaderboard.leaderBoardPlayers">
+    <tr *ngFor="let player of leaderboard">
       <td>{{player.position}}.</td>
-      <td>
+      <td *ngIf="showNation">
         <app-flag [zone]="player.zone"></app-flag>
       </td>
       <td style="text-align: left">
@@ -35,8 +35,8 @@
       <td>
         <div *ngIf="player.amountThird !== 0">{{player.amountThird}}</div>
       </td>
-      <td>{{player.bestResult}}</td>
-      <td>{{player.averagePosition}}</td>
+      <td>{{player.bestResult}}.</td>
+      <td>{{player.averagePosition}}.</td>
     </tr>
   </table>
 </div>

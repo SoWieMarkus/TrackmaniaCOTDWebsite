@@ -26,8 +26,8 @@ export class MapComponent implements OnInit, AfterViewInit {
 
   }
 
-  public focus(country: Country) {
-    focus(country.geoId);
+  public focus(country:string) {
+    focus(country);
   }
 
 

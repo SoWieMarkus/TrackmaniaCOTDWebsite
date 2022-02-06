@@ -9,7 +9,7 @@ import {Observable} from "rxjs";
 })
 export class ApiService {
 
-  private static TRACKMANIA_API_SERVER = "http://sowiemarkus.com:8080/"
+  private static TRACKMANIA_API_SERVER = "https://api.sowiemarkus.com/"
 
   constructor(private httpClient: HttpClient) {
   }
@@ -24,11 +24,19 @@ export class ApiService {
   }
 
   public getTrackOfTheDay(offset: number) {
-    return this.httpClient.get("http://sowiemarkus.com:8080/tmio/" + offset);
+    return this.httpClient.get(ApiService.TRACKMANIA_API_SERVER + "tmio/" + offset);
   }
 
   public getMonthlyLeaderBoard(month: number, year: number) {
-    return this.httpClient.get("http://sowiemarkus.com:8080/cotd/" + year + "/" + month);
+    return this.httpClient.get(ApiService.TRACKMANIA_API_SERVER+"cotd/" + year + "/" + month);
+  }
+
+  public getCountriesLeaderboard() {
+    return this.httpClient.get(ApiService.TRACKMANIA_API_SERVER+"cotd/countries");
+  }
+
+  public getCountryLeaderBoard(name: string) {
+    return this.httpClient.get(ApiService.TRACKMANIA_API_SERVER+"cotd/country/" + name);
   }
 
 

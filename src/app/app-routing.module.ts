@@ -12,7 +12,7 @@ const routes: Routes = [
   {path: 'daily/:offset', component: DailyComponent},
   {path: 'monthly/:year/:month', component: MonthlyComponent},
   {path: 'global', component: GlobalComponent},
-  {path: 'globe', component: CountriesComponent}
+  {path: 'countries', component: CountriesComponent}
 
 ];
 

@@ -28,6 +28,10 @@ tr {
   border-color: inherit;
 }
 
+thead {
+  color: white;
+}
+
 .main {
   margin-left: 10%;
   width: 80%;

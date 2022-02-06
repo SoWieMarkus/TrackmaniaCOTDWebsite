@@ -21,6 +21,7 @@ import {MatTabsModule} from "@angular/material/tabs";
 import {FlagComponent} from './flag/flag.component';
 import {LeaderboardComponent} from './leaderboard/leaderboard.component';
 import { CountryComponent } from './country/country.component';
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
@@ -36,18 +37,19 @@ import { CountryComponent } from './country/country.component';
     LeaderboardComponent,
     CountryComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    MatCardModule,
-    MatProgressSpinnerModule,
-    MatTabsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatButtonModule,
+        MatCardModule,
+        MatProgressSpinnerModule,
+        MatTabsModule,
+        MatTableModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

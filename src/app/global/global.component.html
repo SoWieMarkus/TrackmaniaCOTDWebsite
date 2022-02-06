@@ -1,2 +1,2 @@
 <div style="margin-left: 10%; margin-right: 10%; width: 80%; text-align: center"><h1>Global Leaderboard</h1></div>
-<app-leaderboard [leaderboard]="leaderboard"></app-leaderboard>
+<app-leaderboard *ngIf="leaderboard !== undefined" [leaderboard]="leaderboard.leaderBoardPlayers"></app-leaderboard>

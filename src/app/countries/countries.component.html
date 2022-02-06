@@ -1,10 +1,37 @@
 <div style="width: 100%">
-<app-map #map style="width: 40%; float: right"></app-map>
-<table style="width: 60%; float: left">
-  <tr *ngFor="let country of countries">
-    <td (click)="clickEvent(country)">{{country.name}}</td>
-  </tr>
-</table>
+<app-map #map style="width: 50%; float: right"></app-map>
+
+  <div style="width: 50%; float: left" class="table" *ngIf="countries.length > 0">
+    <h1 style="text-align: center">Country Leaderboard</h1>
+    <table style="width: 100%">
+      <thead>
+      <tr>
+        <td></td>
+        <td style="text-align: left">Nation</td>
+        <td style="text-align: left">Best player</td>
+        <td>Points</td>
+        <td><img class="icon" src="../../assets/first.png" alt="first"></td>
+        <td>Player in Div1</td>
+        <td>Points per player</td>
+      </tr>
+      </thead>
+      <tr *ngFor="let country of countries">
+        <td (click)="clickEvent(country)" style="text-align: left; cursor: pointer;"> <img src="https://trackmania.io/img/flags/{{country.flag}}.jpg" alt="flag" style="width: 20px;margin-left: 10px; margin-right: 10px"> </td>
+        <td (click)="clickEvent(country)" style="text-align: left; cursor: pointer">{{country.id}}</td>
+        <td style="text-align: left"><a href="https://trackmania.io/#/player/{{country.bestPlayer.accountId}}">{{country.bestPlayer.displayName}}</a></td>
+        <td>{{country.points}}</td>
+        <td>{{country.amountWins}}</td>
+        <td>{{country.amountPlayers}}</td>
+        <td>{{(country.points / country.amountPlayers).toFixed(0)}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <div *ngIf="country.length > 0" style="text-align: center">
+    <h1>{{name}} <img src="https://trackmania.io/img/flags/{{flag}}.jpg" alt="flag" style="width: 20px"></h1>
+    <app-leaderboard style="width: 50%; float: right" [showNation]="name === 'United Kingdom'" [leaderboard]="country"></app-leaderboard>
+  </div>
+
 </div>
 
 

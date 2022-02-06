@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Leaderboard} from "../api/models/Leaderboard";
+import {PlayerResult} from "../api/models/PlayerResult";
 
 @Component({
   selector: 'app-leaderboard',
@@ -8,7 +9,8 @@ import {Leaderboard} from "../api/models/Leaderboard";
 })
 export class LeaderboardComponent implements OnInit {
 
-  @Input() leaderboard!: Leaderboard;
+  @Input() leaderboard!: PlayerResult[];
+  @Input() showNation: boolean = true;
 
   constructor() {
   }
